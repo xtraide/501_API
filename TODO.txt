@@ -6,8 +6,13 @@ titre , content, creator, created, edited,img
 
 compte 
 
-identifiant(email)  mdp  ville  nom prenom age?  formation  created_at,edited_at role 
+identifiant(email)  mdp  ville?  nom prenom age?  formation  created_at,edited_at role  valid
 
 notes
 
 id_problemes id_etudiant note 
+
+intervention/condference  jour de la JPO
+
+master, room, t_start,t_end,  
+
