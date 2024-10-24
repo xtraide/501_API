@@ -3,12 +3,12 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
-use App\Repository\CondferenceRepository;
+use App\Repository\ConferenceRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: CondferenceRepository::class)]
+#[ORM\Entity(repositoryClass: ConferenceRepository::class)]
 #[ApiResource]
-class Condference
+class Conference
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -19,13 +19,19 @@ class Condference
     private ?string $master = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $room = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $t_start = null;
 
     #[ORM\Column(length: 255)]
     private ?string $t_end = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $title = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $content = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $room = null;
 
     public function getId(): ?int
     {
@@ -40,18 +46,6 @@ class Condference
     public function setMaster(string $master): static
     {
         $this->master = $master;
-
-        return $this;
-    }
-
-    public function getRoom(): ?string
-    {
-        return $this->room;
-    }
-
-    public function setRoom(string $room): static
-    {
-        $this->room = $room;
 
         return $this;
     }
@@ -76,6 +70,42 @@ class Condference
     public function setTEnd(string $t_end): static
     {
         $this->t_end = $t_end;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): static
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(string $content): static
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    public function getRoom(): ?string
+    {
+        return $this->room;
+    }
+
+    public function setRoom(string $room): static
+    {
+        $this->room = $room;
 
         return $this;
     }

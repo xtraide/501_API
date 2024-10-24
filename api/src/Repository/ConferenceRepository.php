@@ -2,22 +2,22 @@
 
 namespace App\Repository;
 
-use App\Entity\Condference;
+use App\Entity\Conference;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Condference>
+ * @extends ServiceEntityRepository<Conference>
  */
-class CondferenceRepository extends ServiceEntityRepository
+class ConferenceRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Condference::class);
+        parent::__construct($registry, Conference::class);
     }
 
     //    /**
-    //     * @return Condference[] Returns an array of Condference objects
+    //     * @return Conference[] Returns an array of Conference objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -31,7 +31,7 @@ class CondferenceRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Condference
+    //    public function findOneBySomeField($value): ?Conference
     //    {
     //        return $this->createQueryBuilder('c')
     //            ->andWhere('c.exampleField = :val')
