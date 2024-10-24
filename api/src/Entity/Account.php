@@ -39,6 +39,12 @@ class Account
     #[ORM\Column]
     private ?\DateTimeImmutable $edited_at = null;
 
+    #[ORM\Column]
+    private ?bool $valid = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $study = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -136,6 +142,30 @@ class Account
     public function setEditedAt(\DateTimeImmutable $edited_at): static
     {
         $this->edited_at = $edited_at;
+
+        return $this;
+    }
+
+    public function isValid(): ?bool
+    {
+        return $this->valid;
+    }
+
+    public function setValid(bool $valid): static
+    {
+        $this->valid = $valid;
+
+        return $this;
+    }
+
+    public function getStudy(): ?string
+    {
+        return $this->study;
+    }
+
+    public function setStudy(?string $study): static
+    {
+        $this->study = $study;
 
         return $this;
     }
